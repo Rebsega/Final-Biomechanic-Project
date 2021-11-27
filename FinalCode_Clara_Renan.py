@@ -7,3 +7,21 @@
 #Cut the video in a specific part then generate images of this piece
 #Show the number of frames
 #Generate an video of images
+
+import sys
+import numpy as np
+import cv2
+
+def main():
+    captura = cv.VideoCapture(sys.argv[1])
+    captura.open()
+    while(captura.isOpened()):
+        ret,frame = cap.read()
+        cv.imshow('frame')
+        if cv.waitKey(1) & 0xFF == ord('q'):
+            break
+    cap.release()
+    cv.destroyAllWindows()
+
+if __name__ == '__main__':
+    main()
